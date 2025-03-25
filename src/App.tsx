@@ -15,11 +15,12 @@ function App() {
   const [overlayOpacity, setOverlayOpacity] = useState(0);
 
   const sponsors = [
-    "https://images.unsplash.com/photo-1627384113710-424c9181ebbb?auto=format&fit=crop&q=80&w=200",
-    "https://images.unsplash.com/photo-1627384113743-6bd5a479fffd?auto=format&fit=crop&q=80&w=200",
-    "https://images.unsplash.com/photo-1627384113972-f4c0392fe5aa?auto=format&fit=crop&q=80&w=200",
-    "https://images.unsplash.com/photo-1627384113830-4c8ca2c5d5e1?auto=format&fit=crop&q=80&w=200",
-    "https://images.unsplash.com/photo-1627384113776-45c9cfd39b4d?auto=format&fit=crop&q=80&w=200",
+    "/images/SamerKhouzami.png",
+    "/images/BassamFattouh.png",
+    "/images/Mounir.png",
+    "/images/Yehia&Zakaria.png",
+    "/images/Kempinski .png",
+    "/images/yoyo&kreik.png",
   ];
 
   useEffect(() => {
@@ -73,7 +74,7 @@ function App() {
           <div className="flex justify-between items-center h-20">
             <div className="text-2xl font-serif font-medium">
               <a href="#" className={isScrolled ? "text-white" : "text-white"}>
-                Salonz
+                GlamGo
               </a>
             </div>
             <div className="hidden md:flex space-x-8">
@@ -138,13 +139,13 @@ function App() {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-white px-4 animate-fade-in">
             <h1 className="text-7xl font-serif font-medium mb-6">
-              Beauty & Care
+              On-Demand Glam, Anytime
             </h1>
             <p className="text-2xl mb-12 font-light tracking-wide">
-              Your Premier Hair Salon Experience
+              Beauty & wellness at your doorstep. Safe, vetted, and flexible.
             </p>
             <button className="bg-primary text-white px-12 py-4 rounded-full text-lg font-medium hover:opacity-90 transition-all duration-300 hover:transform hover:scale-105">
-              Book Appointment
+              Get Early Access
             </button>
           </div>
         </div>
@@ -152,14 +153,14 @@ function App() {
 
       {/* Sponsors Section */}
       <section className="py-16 bg-accent overflow-hidden">
-        <div className="sponsors-scroll">
-          <div className="sponsors-scroll-content">
+        <div className="w-full overflow-x-auto no-scrollbar">
+          <div className="flex items-center animate-scroll whitespace-nowrap">
             {[...sponsors, ...sponsors].map((sponsor, index) => (
               <img
                 key={index}
                 src={sponsor}
                 alt={`Sponsor ${index + 1}`}
-                className="h-20 mx-12 grayscale hover:grayscale-0 transition-all duration-300"
+                className="h-20 mx-8 grayscale hover:grayscale-0 transition-all duration-300 inline-block"
               />
             ))}
           </div>
@@ -172,88 +173,202 @@ function App() {
           <h2 className="text-5xl font-serif font-medium text-center mb-20 text-secondary animate-on-scroll">
             Our Services
           </h2>
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="bg-accent p-10 rounded-2xl shadow-lg text-center hover-scale animate-on-scroll">
-              <Scissors className="w-16 h-16 mx-auto mb-6 text-primary" />
-              <h3 className="text-2xl font-serif font-medium mb-4 text-secondary">
-                Premium Cuts
-              </h3>
-              <p className="text-text-light text-lg">
-                Precision haircuts tailored to your unique style and preferences
-              </p>
-            </div>
-            <div className="bg-accent p-10 rounded-2xl shadow-lg text-center hover-scale animate-on-scroll">
-              <Clock className="w-16 h-16 mx-auto mb-6 text-primary" />
-              <h3 className="text-2xl font-serif font-medium mb-4 text-secondary">
-                Color Excellence
-              </h3>
-              <p className="text-text-light text-lg">
-                Expert color services from subtle highlights to bold
-                transformations
-              </p>
-            </div>
-            <div className="bg-accent p-10 rounded-2xl shadow-lg text-center hover-scale animate-on-scroll">
-              <MapPin className="w-16 h-16 mx-auto mb-6 text-primary" />
-              <h3 className="text-2xl font-serif font-medium mb-4 text-secondary">
-                Luxury Treatments
-              </h3>
-              <p className="text-text-light text-lg">
-                Rejuvenating treatments for healthy, beautiful hair
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* About Section */}
-      <section id="about" className="py-24 px-4 bg-accent">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
-          <div className="md:w-1/2 animate-on-scroll">
-            <img
-              src="https://images.unsplash.com/photo-1633791583419-6bed74d58f96?auto=format&fit=crop&q=80"
-              alt="Salon Interior"
-              className="rounded-2xl shadow-2xl"
-            />
-          </div>
-          <div className="md:w-1/2 animate-on-scroll">
-            <h2 className="text-5xl font-serif font-medium mb-8 text-secondary">
-              About Our Salon
-            </h2>
-            <p className="text-text-light text-xl mb-8 leading-relaxed">
-              At Salonz, we combine artistry with expertise to create looks that
-              enhance your natural beauty. Our team of master stylists brings
-              decades of combined experience and a passion for staying ahead of
-              the latest trends and techniques.
+          <div className="text-center mb-10 animate-on-scroll">
+            <p className="text-lg text-text-light max-w-2xl mx-auto leading-relaxed">
+              Browse services below to find vetted professionals and book beauty
+              or wellness appointments that come to you — wherever you are.
             </p>
-            <button className="bg-primary text-white px-12 py-4 rounded-full text-lg font-medium hover:opacity-90 transition-all duration-300">
-              Discover More
-            </button>
+          </div>
+          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-12">
+            {/* Hair */}
+            <a href="/services/hair" className="block">
+              <div className="bg-accent px-6 py-8 max-w-[240px] min-h-[340px] rounded-2xl shadow-lg text-center hover:scale-105 transition-transform animate-on-scroll mx-auto flex flex-col items-center justify-between">
+                <div>
+                  <div className="flex flex-col items-center text-center">
+                    <Scissors className="w-10 h-10 mb-3 text-primary" />
+                    <h3 className="text-lg font-serif font-medium mb-2 text-secondary">
+                      Hair & Styling
+                    </h3>
+                    <p className="text-text-light text-sm leading-snug text-center">
+                      From blowouts to bridal styling, done wherever you are
+                    </p>
+                  </div>
+                </div>
+                <p className="mt-4 text-xs text-primary font-medium">
+                  Tap to explore bookings
+                </p>
+              </div>
+            </a>
+
+            {/* Nails */}
+            <a href="/services/nails" className="block">
+              <div className="bg-accent px-6 py-8 max-w-[240px] min-h-[340px] rounded-2xl shadow-lg text-center hover:scale-105 transition-transform animate-on-scroll mx-auto flex flex-col items-center justify-between">
+                <div>
+                  <div className="flex flex-col items-center text-center">
+                    <Clock className="w-10 h-10 mb-3 text-primary" />
+                    <h3 className="text-lg font-serif font-medium mb-2 text-secondary">
+                      Nails & Waxing
+                    </h3>
+                    <p className="text-text-light text-sm leading-snug text-center">
+                      Book mani-pedis and waxing at home with certified pros
+                    </p>
+                  </div>
+                </div>
+                <p className="mt-4 text-xs text-primary font-medium">
+                  Tap to explore bookings
+                </p>
+              </div>
+            </a>
+
+            {/* Massage */}
+            <a href="/services/massage" className="block">
+              <div className="bg-accent px-6 py-8 max-w-[240px] min-h-[340px] rounded-2xl shadow-lg text-center hover:scale-105 transition-transform animate-on-scroll mx-auto flex flex-col items-center justify-between">
+                <div>
+                  <div className="flex flex-col items-center text-center">
+                    <MapPin className="w-10 h-10 mb-3 text-primary" />
+                    <h3 className="text-lg font-serif font-medium mb-2 text-secondary">
+                      Massages & Wellness
+                    </h3>
+                    <p className="text-text-light text-sm leading-snug text-center">
+                      Relaxation meets convenience — unwind without leaving the
+                      house
+                    </p>
+                  </div>
+                </div>
+                <p className="mt-4 text-xs text-primary font-medium">
+                  Tap to explore bookings
+                </p>
+              </div>
+            </a>
+
+            {/* Barbers */}
+            <a href="/services/barbers" className="block">
+              <div className="bg-accent px-6 py-8 max-w-[240px] min-h-[340px] rounded-2xl shadow-lg text-center hover:scale-105 transition-transform animate-on-scroll mx-auto flex flex-col items-center justify-between">
+                <div>
+                  <div className="flex flex-col items-center text-center">
+                    <Scissors className="w-10 h-10 mb-3 text-primary rotate-90" />
+                    <h3 className="text-lg font-serif font-medium mb-2 text-secondary">
+                      Barber Services
+                    </h3>
+                    <p className="text-text-light text-sm leading-snug text-center">
+                      On-demand grooming and beard care tailored for men
+                    </p>
+                  </div>
+                </div>
+                <p className="mt-4 text-xs text-primary font-medium">
+                  Tap to explore bookings
+                </p>
+              </div>
+            </a>
+
+            {/* Tattoos */}
+            <a href="/services/tattoos" className="block">
+              <div className="bg-accent px-6 py-8 max-w-[240px] min-h-[340px] rounded-2xl shadow-lg text-center hover:scale-105 transition-transform animate-on-scroll mx-auto flex flex-col items-center justify-between">
+                <div>
+                  <div className="flex flex-col items-center text-center">
+                    <MapPin className="w-10 h-10 mb-3 text-primary rotate-45" />
+                    <h3 className="text-lg font-serif font-medium mb-2 text-secondary">
+                      Tattoos & Body Art
+                    </h3>
+                    <p className="text-text-light text-sm leading-snug text-center">
+                      Professional in-home tattoo sessions by trusted artists
+                    </p>
+                  </div>
+                </div>
+                <p className="mt-4 text-xs text-primary font-medium">
+                  Tap to explore bookings
+                </p>
+              </div>
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section id="gallery" className="py-24 px-4 bg-white">
+      {/* How It Works – Timeline Style */}
+      <section className="py-24 px-4 bg-white">
+        <div className="max-w-4xl mx-auto text-center animate-on-scroll">
+          <h2 className="text-5xl font-serif font-medium mb-12 text-secondary">
+            How GlamGo Works
+          </h2>
+          <div className="relative border-l border-gray-300 pl-12 space-y-12 text-left">
+            <div className="relative">
+              <div className="absolute -left-3 top-1 w-6 h-6 bg-primary rounded-full border-4 border-white"></div>
+              <h3 className="text-xl pl-6 font-semibold text-primary mb-1">
+                Choose a Service
+              </h3>
+              <p className="text-text-light text-sm max-w-md pl-6">
+                Browse our on-demand beauty & wellness categories and pick
+                exactly what you need.
+              </p>
+            </div>
+
+            <div className="relative">
+              <div className="absolute -left-3 top-1 w-6 h-6 bg-primary rounded-full border-4 border-white"></div>
+              <h3 className="text-xl pl-6 font-semibold text-primary mb-1">
+                Book on Your Terms
+              </h3>
+              <p className="text-text-light text-sm max-w-md pl-6">
+                Select the date, time, and location — home, office, or event —
+                we'll handle the rest.
+              </p>
+            </div>
+
+            <div className="relative">
+              <div className="absolute -left-3 top-1 w-6 h-6 bg-primary rounded-full border-4 border-white"></div>
+              <h3 className="text-xl pl-6 font-semibold text-primary mb-1 ">
+                Enjoy the Experience
+              </h3>
+              <p className="text-text-light text-sm max-w-md pl-6">
+                Your pro arrives fully equipped — relax, glow up, and feel your
+                best.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feedback Section */}
+      <section id="feedback" className="py-24 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-5xl font-serif font-medium text-center mb-20 text-secondary animate-on-scroll">
-            Our Work
+            What Clients Say
           </h2>
+
           <div className="grid md:grid-cols-3 gap-8">
-            <img
-              src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&q=80"
-              alt="Hairstyle 1"
-              className="rounded-2xl shadow-lg hover-scale animate-on-scroll h-96 w-full object-cover"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1552850546-184ee64aa351?auto=format&fit=crop&q=80"
-              alt="Hairstyle 2"
-              className="rounded-2xl shadow-lg hover-scale animate-on-scroll h-96 w-full object-cover"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?auto=format&fit=crop&q=80"
-              alt="Hairstyle 3"
-              className="rounded-2xl shadow-lg hover-scale animate-on-scroll h-96 w-full object-cover"
-            />
+            {/* Feedback Card 1 */}
+            <div className="bg-accent rounded-2xl p-8 shadow-lg animate-on-scroll">
+              <p className="text-text-light text-base mb-6 leading-relaxed">
+                “I booked a last-minute stylist before my friend’s wedding — she
+                showed up early, brought everything with her, and nailed the
+                look. GlamGo is a lifesaver!”
+              </p>
+              <p className="text-secondary font-serif font-medium text-lg">
+                — Layla M.
+              </p>
+            </div>
+
+            {/* Feedback Card 2 */}
+            <div className="bg-accent rounded-2xl p-8 shadow-lg animate-on-scroll">
+              <p className="text-text-light text-base mb-6 leading-relaxed">
+                “Getting a massage at home after a long work week? Game changer.
+                GlamGo makes self-care easy, even with my schedule.”
+              </p>
+              <p className="text-secondary font-serif font-medium text-lg">
+                — Rami K.
+              </p>
+            </div>
+
+            {/* Feedback Card 3 */}
+            <div className="bg-accent rounded-2xl p-8 shadow-lg animate-on-scroll">
+              <p className="text-text-light text-base mb-6 leading-relaxed">
+                “Super smooth booking and great service. I’ve used GlamGo for
+                hair, nails, and even a group event — highly recommend.”
+              </p>
+              <p className="text-secondary font-serif font-medium text-lg">
+                — Dana S.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -270,23 +385,21 @@ function App() {
               <h3 className="text-2xl font-serif font-medium mb-4 text-secondary">
                 Call Us
               </h3>
-              <p className="text-text-light text-lg">(555) 123-4567</p>
+              <p className="text-text-light text-lg">(+961) 01 123 456</p>
             </div>
             <div className="text-center animate-on-scroll">
               <Mail className="w-12 h-12 mx-auto mb-6 text-primary" />
               <h3 className="text-2xl font-serif font-medium mb-4 text-secondary">
                 Email Us
               </h3>
-              <p className="text-text-light text-lg">info@salonz.com</p>
+              <p className="text-text-light text-lg">info@glamgo.com</p>
             </div>
             <div className="text-center animate-on-scroll">
               <MapPin className="w-12 h-12 mx-auto mb-6 text-primary" />
               <h3 className="text-2xl font-serif font-medium mb-4 text-secondary">
                 Visit Us
               </h3>
-              <p className="text-text-light text-lg">
-                123 Beauty Street, NY 10001
-              </p>
+              <p className="text-text-light text-lg">Beirut, Lebanon</p>
             </div>
           </div>
         </div>
@@ -297,9 +410,10 @@ function App() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-4 gap-12">
             <div>
-              <h3 className="text-2xl font-serif font-medium mb-6">Salonz</h3>
+              <h3 className="text-2xl font-serif font-medium mb-6">GlamGo</h3>
               <p className="text-gray-400 text-lg">
-                Your destination for beauty and confidence.
+                Your go-to platform for effortless beauty and wellness —
+                wherever you are.
               </p>
             </div>
             <div>
@@ -310,8 +424,8 @@ function App() {
             </div>
             <div>
               <h3 className="text-2xl font-serif font-medium mb-6">Contact</h3>
-              <p className="text-gray-400 text-lg">(555) 123-4567</p>
-              <p className="text-gray-400 text-lg">info@salonz.com</p>
+              <p className="text-gray-400 text-lg">(+961) 01 123 456</p>
+              <p className="text-gray-400 text-lg">info@glamgo.com</p>
             </div>
             <div>
               <h3 className="text-2xl font-serif font-medium mb-6">
@@ -326,7 +440,7 @@ function App() {
           </div>
           <div className="border-t border-gray-800 mt-12 pt-8 text-center">
             <p className="text-gray-400">
-              &copy; 2024 Salonz. All rights reserved.
+              &copy; 2024 GlamGo. All rights reserved.
             </p>
           </div>
         </div>
