@@ -41,7 +41,7 @@ export const ServicePage = () => {
   const [selectedService, setSelectedService] = useState<ServiceDetail | null>(null);
   const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
 
-  // Service catalog - you would likely fetch this from an API in a real app
+ 
   const services: Record<string, ServiceDetail> = {
     "hair": {
       id: "hair",
@@ -88,28 +88,28 @@ export const ServicePage = () => {
       inspirationGallery: [
         {
           id: "hi1",
-          image: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&q=80",
+          image: "https://i.pinimg.com/736x/97/62/50/97625069f11f22149e998fea245a1b45.jpg",
           title: "Elegant Bridal Updo",
           description: "Sophisticated twisted updo with delicate accessories, perfect for bridal events",
           tags: ["bridal", "updo", "elegant"]
         },
         {
           id: "hi2",
-          image: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&q=80",
+          image: "https://i.pinimg.com/736x/b2/92/3c/b2923c6bd8f4ac06e572223ce6142d2f.jpg",
           title: "Modern Bob Cut",
           description: "Sleek, precision-cut bob with subtle layers for movement and texture",
           tags: ["bob", "modern", "sleek"]
         },
         {
           id: "hi3",
-          image: "https://images.unsplash.com/photo-1592528737737-c082ccil4af6?auto=format&fit=crop&q=80",
+          image: "https://i.pinimg.com/736x/ec/46/03/ec46031afbb7103dea1c22b2f3168814.jpg",
           title: "Vibrant Balayage",
           description: "Hand-painted highlights creating a natural sun-kissed gradient effect",
           tags: ["balayage", "color", "natural"]
         },
         {
           id: "hi4",
-          image: "https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&q=80",
+          image: "https://i.pinimg.com/736x/6c/02/c0/6c02c0d8b0921d8b24e93c34800f9f40.jpg",
           title: "Textured Waves",
           description: "Effortless beach waves with volume and movement for a casual yet polished look",
           tags: ["waves", "texture", "casual"]
@@ -161,14 +161,14 @@ export const ServicePage = () => {
       inspirationGallery: [
         {
           id: "ni1",
-          image: "https://images.unsplash.com/photo-1588359953494-0c215e3cedc6?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          image: "https://i.pinimg.com/736x/75/ca/16/75ca169f327d3a1e3d13782c687c7d34.jpg",
             title: "Warm Neutrals with Glitter Accent",
             description: "A cozy autumn-inspired manicure blending soft nude tones with a touch of glam sparkle on the ring finger.",
             tags: ["neutral", "glitter", "cozy", "fall", "elegant"]
           },
         {
           id: "ni2",
-          image: "https://images.unsplash.com/photo-1640483187973-a33fae975a1d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmFpbHMlMjBpZGVhc3xlbnwwfHwwfHx8MA%3D%3D",
+          image: "https://i.pinimg.com/736x/f8/5b/b4/f85bb435f233f455f56e05e6f1a06a85.jpg",
           title: "Geometric Nail Art",
           description: "Bold geometric patterns with metallic accents for a statement look",
           tags: ["geometric", "bold", "metallic"]
@@ -182,7 +182,7 @@ export const ServicePage = () => {
         },
         {
           id: "ni4",
-          image: "https://i.pinimg.com/736x/a0/e1/34/a0e134baa984848281a5abc709097598.jpg",
+          image: "https://i.pinimg.com/736x/29/f2/ad/29f2adabceebe9993c2996341a4ebbf2.jpg",
           title: "Rhinestone Accents",
           description: "Luxurious design with strategically placed crystals for elegant sparkle",
           tags: ["rhinestones", "luxury", "sparkle"]
@@ -241,7 +241,7 @@ export const ServicePage = () => {
         },
         {
           id: "mi2",
-          image: "https://images.unsplash.com/photo-1611073761569-0da476814daa?auto=format&fit=crop&q=80",
+          image: "https://i.pinimg.com/736x/80/ab/6f/80ab6fdd2d6a20779fc5c16cdd593e6d.jpg",
           title: "Hot Stone Placement",
           description: "Strategic stone placement for deep muscle relief and energy balancing",
           tags: ["hot stone", "relaxation", "energy"]
@@ -255,7 +255,7 @@ export const ServicePage = () => {
         },
         {
           id: "mi4",
-          image: "https://images.unsplash.com/photo-1600334168850-98d1703ab6fe?auto=format&fit=crop&q=80",
+          image: "https://i.pinimg.com/736x/a9/a8/15/a9a81509eaa2baecd0ce57ca57dde9c8.jpg",
           title: "Couples Experience",
           description: "Side-by-side massage experience perfect for partners or friends",
           tags: ["couples", "shared", "experience"]
@@ -307,28 +307,28 @@ export const ServicePage = () => {
       inspirationGallery: [
         {
           id: "bi1",
-          image: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&q=80",
+          image: "https://i.pinimg.com/736x/22/c0/d8/22c0d860e155d1461845dcc969ec07ac.jpg",
           title: "Classic Fade",
           description: "Precision fade with clean lines and detailed edge work for a timeless look",
           tags: ["fade", "classic", "precision"]
         },
         {
           id: "bi2",
-          image: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&q=80",
+          image: "https://i.pinimg.com/736x/2f/3a/5f/2f3a5fce19d198b2b20e0d288e7aa56e.jpg",
           title: "Textured Crop",
           description: "Modern textured top with short sides for a contemporary, easy-to-maintain style",
           tags: ["crop", "texture", "modern"]
         },
         {
           id: "bi3",
-          image: "https://images.unsplash.com/photo-1593702288051-65d075d8d0a5?auto=format&fit=crop&q=80",
+          image: "https://i.pinimg.com/736x/fa/87/32/fa873247fe0ea8c17dd39b4f6890c10f.jpg",
           title: "Full Beard Styling",
           description: "Sculpted full beard with defined cheek and necklines for a polished appearance",
           tags: ["beard", "grooming", "sculpted"]
         },
         {
           id: "bi4",
-          image: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80",
+          image: "https://i.pinimg.com/736x/05/48/e6/0548e60ca77d5d376ab871df86aca1ad.jpg",
           title: "Vintage Pompadour",
           description: "Classic high-volume style with modern execution for a sophisticated statement",
           tags: ["pompadour", "vintage", "volume"]
@@ -380,28 +380,28 @@ export const ServicePage = () => {
       inspirationGallery: [
         {
           id: "ti1",
-          image: "https://images.unsplash.com/photo-1543276417-9c6f436dab7f?auto=format&fit=crop&q=80",
+          image: "https://i.pinimg.com/736x/f2/b0/21/f2b02126913c53d59c149c15ca35dba1.jpg",
           title: "Minimalist Line Art",
           description: "Delicate single-line designs with subtle details for an elegant statement",
           tags: ["minimalist", "line work", "delicate"]
         },
         {
           id: "ti2",
-          image: "https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?auto=format&fit=crop&q=80",
+          image: "https://i.pinimg.com/736x/9a/83/a1/9a83a111c9ba39e926a938059e3c3bc3.jpg",
           title: "Botanical Illustrations",
           description: "Nature-inspired florals and plants with detailed shading and realistic execution",
           tags: ["botanical", "nature", "detailed"]
         },
         {
           id: "ti3",
-          image: "https://images.unsplash.com/photo-1569529465841-dfecdab7503b?auto=format&fit=crop&q=80",
+          image: "https://i.pinimg.com/736x/f4/e3/5c/f4e35c202a2938e34f82ca36cfacbcb2.jpg",
           title: "Geometric Blackwork",
           description: "Bold black ink patterns using geometric shapes and precise line work",
           tags: ["geometric", "blackwork", "pattern"]
         },
         {
           id: "ti4",
-          image: "https://images.unsplash.com/photo-1516714435131-44d6b64dc6a2?auto=format&fit=crop&q=80",
+          image: "https://i.pinimg.com/736x/cf/d5/2d/cfd52d4fea1aab3bec6b8cc28a3fb6f6.jpg",
           title: "Watercolor Effect",
           description: "Vibrant colors blending together to create a painterly, artistic effect",
           tags: ["watercolor", "colorful", "artistic"]
@@ -514,9 +514,7 @@ export const ServicePage = () => {
                 Contact
               </Link>
             </div>
-            <button className="bg-primary text-white px-6 py-2 rounded-full text-sm font-medium hover:opacity-90 transition-all duration-300">
-              Book Now
-            </button>
+            
           </div>
         </div>
       </nav>
@@ -860,9 +858,6 @@ export const ServicePage = () => {
         </>
       )}
     </ul>
-    <button className="w-full bg-primary text-white py-3 rounded-full mt-8 font-medium hover:opacity-90 transition-all duration-300">
-      Book Appointment
-    </button>
   </div>
 </div>
             </div>
@@ -940,7 +935,8 @@ export const ServicePage = () => {
             <div className="grid lg:grid-cols-12 gap-6 relative">
               {/* Featured Large Image */}
               <div className="lg:col-span-8 rounded-xl overflow-hidden shadow-lg animate-on-scroll">
-                <div className="relative group h-96">
+              <div className="relative group aspect-[16/10]">
+
                   <img 
                     src={selectedService.inspirationGallery[activeGalleryIndex].image} 
                     alt={selectedService.inspirationGallery[activeGalleryIndex].title}
@@ -1000,14 +996,7 @@ export const ServicePage = () => {
           <p className="text-lg text-text-light mb-10 max-w-2xl mx-auto">
             Book your appointment now and have our professional come to your location. All equipment and products provided.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-primary text-white px-8 py-3 rounded-full font-medium hover:opacity-90 transition-all duration-300">
-              Book Now
-            </button>
-            <button className="bg-white text-primary px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-all duration-300">
-              Contact Us
-            </button>
-          </div>
+          
         </div>
       </section>
 
