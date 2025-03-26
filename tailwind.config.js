@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#C5A992', // Warm beige
+        primary: '#A37E61', // Warm beige
         secondary: '#1A1A1A', // Rich black
         accent: '#F8F5F3', // Light cream
         'text-dark': '#1A1A1A',

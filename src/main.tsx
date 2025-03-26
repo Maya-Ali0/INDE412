@@ -9,6 +9,7 @@ import {
 import App from './App.tsx';
 import { ServicePage } from './ServicePage';
 import { ServiceProvidersPage } from './ServiceProvidersPage';
+import {ProviderBookingPage} from './ProviderBookingPage';
 import './index.css';
 
 const router = createBrowserRouter(
@@ -17,6 +18,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<App />} />
       <Route path="/services/:serviceId" element={<ServicePage />} />
       <Route path="/services/:serviceId/providers" element={<ServiceProvidersPage />} />
+      <Route path="/services/:serviceId/providers/:providerId" element={<ProviderBookingPage />} />
     </>
   )
 );

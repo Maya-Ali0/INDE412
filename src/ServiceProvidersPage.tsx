@@ -686,9 +686,9 @@ export const ServiceProvidersPage = () => {
                             <div className="text-lg font-medium">
                               From ${provider.price}
                             </div>
-                            <button className="bg-primary text-white px-4 py-2 rounded-full text-sm hover:opacity-90 transition-all duration-300">
-                              Book Now
-                            </button>
+                            <Link to={`/services/${serviceId}/providers/${provider.id}`} className="bg-primary text-white px-4 py-2 rounded-full text-sm hover:opacity-90 transition-all duration-300">
+  Book Now
+</Link>
                           </div>
                         </div>
                       </div>

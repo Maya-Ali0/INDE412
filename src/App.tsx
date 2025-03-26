@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Scissors,
   Clock,
@@ -13,7 +14,44 @@ import {
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [overlayOpacity, setOverlayOpacity] = useState(0);
-
+  const heroImages = [
+    "https://i.pinimg.com/736x/19/cd/15/19cd156a6600bd26c4cb736b9d8748f6.jpg",
+    "https://www.shutterstock.com/image-photo/we-better-when-together-studio-600nw-345945431.jpg",
+    //"https://media.gettyimages.com/id/1370743548/video/woman-tattoo-artist-doing-tattoos-for-her-boyfriend.jpg?s=640x640&k=20&c=TEI7yzG7vF3UFoQnA9_aPNF9ZJStm13wpcqe6U0QQT4=",
+  ];
+  const HeroImageSlider = () => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+      }, 5000);
+      return () => clearInterval(interval);
+    }, []);
+  
+    return (
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        {heroImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === currentImageIndex ? "opacity-100 z-20" : "opacity-0 z-10"
+            }`}
+            style={{
+              backgroundImage: `url(${image})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              transitionProperty: "opacity",
+            }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-black bg-opacity-30 z-30" />
+      </div>
+    );
+  };
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
   const sponsors = [
     "/images/SamerKhouzami.png",
     "/images/BassamFattouh.png",
@@ -27,18 +65,22 @@ function App() {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       setIsScrolled(scrollPosition > 50);
-
+  
       if (scrollPosition < window.innerHeight) {
         const opacity = (scrollPosition / window.innerHeight) * 0.95;
         setOverlayOpacity(opacity);
       }
     };
-
+  
+    const imageInterval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 5000);
+  
     const observerOptions = {
       threshold: 0.1,
       rootMargin: "0px",
     };
-
+  
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -47,21 +89,23 @@ function App() {
         }
       });
     }, observerOptions);
-
+  
     document.querySelectorAll(".animate-on-scroll").forEach((element) => {
       if (element instanceof HTMLElement) {
         observer.observe(element);
         element.style.opacity = "0";
       }
     });
-
+  
     window.addEventListener("scroll", handleScroll);
+  
     return () => {
       window.removeEventListener("scroll", handleScroll);
       observer.disconnect();
+      clearInterval(imageInterval);
     };
   }, []);
-
+  
   return (
     <div className="min-h-screen bg-white font-sans">
       {/* Navigation */}
@@ -73,19 +117,19 @@ function App() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex justify-between items-center h-20">
             <div className="text-2xl font-serif font-medium">
-              <a href="#" className={isScrolled ? "text-white" : "text-white"}>
+              <Link to="/" className={isScrolled ? "text-white" : "text-white"}>
                 GlamGo
-              </a>
+              </Link>
             </div>
             <div className="hidden md:flex space-x-8">
-              <a
-                href="#"
+              <Link
+                to="/"
                 className={`${
                   isScrolled ? "text-white" : "text-white"
                 } hover:text-secondary transition-colors`}
               >
                 Home
-              </a>
+              </Link>
               <a
                 href="#services"
                 className={`${
@@ -128,12 +172,12 @@ function App() {
 
       {/* Hero Section */}
       <section
-        className="h-screen bg-cover bg-center bg-fixed relative"
-        style={{
-          backgroundImage:
-            'url("https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80")',
-        }}
-      >
+  className="h-screen bg-cover bg-center bg-fixed relative transition-all duration-1000"
+  style={{
+    backgroundImage: `url("${heroImages[currentImageIndex]}")`,
+  }}
+>
+
         <div className="absolute inset-0 bg-black bg-opacity-30"></div>
         <div className="hero-overlay" style={{ opacity: overlayOpacity }}></div>
         <div className="absolute inset-0 flex items-center justify-center">
@@ -182,7 +226,7 @@ function App() {
           </div>
           <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-12">
             {/* Hair */}
-            <a href="/services/hair" className="block">
+            <Link to="/services/hair" className="block">
               <div className="bg-accent px-6 py-8 max-w-[240px] min-h-[340px] rounded-2xl shadow-lg text-center hover:scale-105 transition-transform animate-on-scroll mx-auto flex flex-col items-center justify-between">
                 <div>
                   <div className="flex flex-col items-center text-center">
@@ -199,10 +243,10 @@ function App() {
                   Tap to explore bookings
                 </p>
               </div>
-            </a>
+            </Link>
 
             {/* Nails */}
-            <a href="/services/nails" className="block">
+            <Link to="/services/nails" className="block">
               <div className="bg-accent px-6 py-8 max-w-[240px] min-h-[340px] rounded-2xl shadow-lg text-center hover:scale-105 transition-transform animate-on-scroll mx-auto flex flex-col items-center justify-between">
                 <div>
                   <div className="flex flex-col items-center text-center">
@@ -219,10 +263,10 @@ function App() {
                   Tap to explore bookings
                 </p>
               </div>
-            </a>
+            </Link>
 
             {/* Massage */}
-            <a href="/services/massage" className="block">
+            <Link to="/services/massage" className="block">
               <div className="bg-accent px-6 py-8 max-w-[240px] min-h-[340px] rounded-2xl shadow-lg text-center hover:scale-105 transition-transform animate-on-scroll mx-auto flex flex-col items-center justify-between">
                 <div>
                   <div className="flex flex-col items-center text-center">
@@ -240,10 +284,10 @@ function App() {
                   Tap to explore bookings
                 </p>
               </div>
-            </a>
+            </Link>
 
             {/* Barbers */}
-            <a href="/services/barbers" className="block">
+            <Link to="/services/barbers" className="block">
               <div className="bg-accent px-6 py-8 max-w-[240px] min-h-[340px] rounded-2xl shadow-lg text-center hover:scale-105 transition-transform animate-on-scroll mx-auto flex flex-col items-center justify-between">
                 <div>
                   <div className="flex flex-col items-center text-center">
@@ -260,10 +304,10 @@ function App() {
                   Tap to explore bookings
                 </p>
               </div>
-            </a>
+            </Link>
 
             {/* Tattoos */}
-            <a href="/services/tattoos" className="block">
+            <Link to="/services/tattoos" className="block">
               <div className="bg-accent px-6 py-8 max-w-[240px] min-h-[340px] rounded-2xl shadow-lg text-center hover:scale-105 transition-transform animate-on-scroll mx-auto flex flex-col items-center justify-between">
                 <div>
                   <div className="flex flex-col items-center text-center">
@@ -280,7 +324,7 @@ function App() {
                   Tap to explore bookings
                 </p>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
